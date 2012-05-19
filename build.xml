@@ -1,0 +1,25 @@
+<project name="simpledb" default="clean-build" basedir=".">
+	<description>
+		Ant build file for simpledb
+	</description>
+	
+	<!-- Set global properties for this build -->
+	<property name="src" location="src" />
+	<property name="build" location="build" />
+
+	<target name="init">
+		<mkdir dir="${build}" />
+	</target>
+
+	<target name="compile" depends="init" description="compile simpledb src">
+		<javac srcdir="${src}" destdir="${build}" />
+	</target>
+
+	<target name="clean" description="clean build dir">
+		<delete dir="${build}" />
+	</target>
+
+	<target name="clean-build" depends="compile,clean" description="clean build dir and compile simpledb src">
+	</target>
+
+</project>
