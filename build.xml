@@ -1,4 +1,4 @@
-<project name="simpledb" default="clean-build" basedir=".">
+<project name="simpledb" default="main" basedir=".">
 	<description>
 		Ant build file for simpledb
 	</description>
@@ -7,19 +7,23 @@
 	<property name="src" location="src" />
 	<property name="build" location="build" />
 
-	<target name="init">
-		<mkdir dir="${build}" />
-	</target>
-
-	<target name="compile" depends="init" description="compile simpledb src">
-		<javac srcdir="${src}" destdir="${build}" />
-	</target>
-
 	<target name="clean" description="clean build dir">
 		<delete dir="${build}" />
 	</target>
 
-	<target name="clean-build" depends="compile,clean" description="clean build dir and compile simpledb src">
+	<target name="compile" description="compile simpledb src">
+		<mkdir dir="${build}/classes" />
+		<javac srcdir="${src}" destdir="${build}/classes" />
 	</target>
 
+	<target name="package">
+		<mkdir dir="${build}/jar" />
+		<jar destfile="${build}/jar/simpledb.jar" basedir="${build}/classes">
+			<manifest>
+				<attribute name="Main-class" value="simpledb.server.Startup" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="main" depends="clean,compile,package" />
 </project>
