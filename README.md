@@ -14,5 +14,5 @@ The simpledb server can be started using the following command:
 LICENSE
 =======
 
-Dr. Sciore and Dr. Sun placed no explicit license on their works. It is provided here without warranty. Any derivate work on my part is license under GPLv3. A copy of the GPLv3 license can be found at [http://www.gnu.org/licenses/gpl-3.0.html](www.gnu.org/licenses/gpl-3.0.html).
+Dr. Sciore and Dr. Sun placed no explicit license on their works. It is provided here without warranty. Any derivate work on my part is licensed under GPLv3. A copy of the GPLv3 license can be found at [http://www.gnu.org/licenses/gpl-3.0.html](www.gnu.org/licenses/gpl-3.0.html).
 
